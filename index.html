@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+            crossorigin="anonymous"
+        />
+        <title>github api</title>
+    </head>
+    <body>
+        <div class="container my-5">
+            <form id="formulario">
+                <div class="form-group">
+                    <input
+                        type="text"
+                        class="form-control mb-2"
+                        aria-describedby="nombreUser"
+                        placeholder="Nombre de Usuario"
+                        value="vuejs"
+                        name="name"
+                    />
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <input
+                            type="text"
+                            class="form-control mb-2"
+                            placeholder="Número de página"
+                            value="1"
+                            name="pagina"
+                        />
+                    </div>
+                    <div class="col">
+                        <input
+                            type="text"
+                            class="form-control mb-2"
+                            placeholder="Número de Rrepositorio por Página"
+                            value="5"
+                            name="nRepos"
+                        />
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                    Enviar
+                </button>
+            </form>
+        </div>
+        <div class="container">
+            <h2 class="text-center">Resuldatos</h2>
+            <div class="d-flex justify-content-center d-none mb-3" id="loading">
+                <div class="spinner-border" role="status">
+                  <span class="visually-hidden">Loading...</span>
+                </div>
+              </div>
+            <section id="resultadoError"></section>
+            <section class="row">
+                <article class="col-md-6">
+                    <ul class="list-group text-center" id="resultadoUser"></ul>
+                </article>
+                <article class="col-md-6">
+                    <ul class="list-group" id="resultadoRepo"></ul>
+                </article>
+            </section>
+
+            <template id="templateUser">
+                <li class="list-group-item">
+                    <img
+                        src=""
+                        alt=""
+                        class="img-fluid mb-2"
+                        width="50"
+                    />
+                </li>
+                <li class="list-group-item">An item</li>
+                <li class="list-group-item">An item</li>
+                <li class="list-group-item">An item</li>
+            </template>
+            <template id="templateRepo">
+                <li class="list-group-item">An item</li>
+            </template>
+            <template id="templateError">
+                <article class="alert alert-danger">
+                    aquí iria la alerta
+                </div>
+            </template>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
